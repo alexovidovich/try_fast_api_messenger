@@ -46,8 +46,8 @@ class User_Chat(Base):
   chat_id = Column(Integer, ForeignKey('chat.id'), primary_key=True)
   user_id = Column(Integer, ForeignKey('user.id'), primary_key=True)
   date_joined = Column(DateTime,default=datetime.datetime.utcnow)
-  role = Column(String(20),)
-  position = Column(Integer)
+  role = Column(String(20))
+
   chat = orm.relationship("Chat",back_populates='member_set')
    
   user = orm.relationship("User", back_populates="chat_set")
